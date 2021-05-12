@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class AudioWaveBar {
   AudioWaveBar({
-    this.height,
+    this.voiceTone,
     this.color,
     this.radius = 50.0,
   });
@@ -16,7 +16,7 @@ class AudioWaveBar {
   /// If it's set to 30, then it will be 30% height from the widget height.
 
   /// [height] of bar must be between 0 to 100. Or There will be side effect.
-  double height;
+  double voiceTone;
 
   /// [color] is the color of the bar
   Color color;
@@ -25,8 +25,8 @@ class AudioWaveBar {
   double radius;
 }
 
-class AudioWave extends StatefulWidget {
-  AudioWave({
+class JCAudioWave extends StatefulWidget {
+  JCAudioWave({
     this.height = 100,
     this.width = 200,
     this.spacing = 5,
@@ -63,7 +63,7 @@ class AudioWave extends StatefulWidget {
   _AudioWaveState createState() => _AudioWaveState();
 }
 
-class _AudioWaveState extends State<AudioWave> {
+class _AudioWaveState extends State<JCAudioWave> {
   int countBeat = 0;
 
   List<AudioWaveBar> bars;
@@ -122,7 +122,7 @@ class _AudioWaveState extends State<AudioWave> {
             children: [
               Container(
                 alignment: Alignment.center,
-                height: bars[index].height * widget.height / 100,
+                height: bars[index].voiceTone * widget.height / 100,
                 width: 2,
                 decoration: BoxDecoration(
                   color: Colors.white,
