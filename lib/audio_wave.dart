@@ -25,8 +25,8 @@ class AudioWaveBar {
   double radius;
 }
 
-class JCAudioWave extends StatefulWidget {
-  JCAudioWave({
+class AudioWave extends StatefulWidget {
+  AudioWave({
     this.height = 100,
     this.width = 200,
     this.spacing = 5,
@@ -63,7 +63,7 @@ class JCAudioWave extends StatefulWidget {
   _AudioWaveState createState() => _AudioWaveState();
 }
 
-class _AudioWaveState extends State<JCAudioWave> {
+class _AudioWaveState extends State<AudioWave> {
   int countBeat = 0;
 
   List<AudioWaveBar> bars;
