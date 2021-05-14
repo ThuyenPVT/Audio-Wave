@@ -1,5 +1,3 @@
-library jc_audio_wave;
-
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +10,7 @@ class AudioWaveBar {
   });
 
   /// [height] is the height of the bar based. It is percentage rate of widget height.
-
   /// If it's set to 30, then it will be 30% height from the widget height.
-
   /// [height] of bar must be between 0 to 100. Or There will be side effect.
   double voiceTone;
 
@@ -75,10 +71,15 @@ class _AudioWaveState extends State<AudioWave> {
     _scrollController = ScrollController();
     if (widget.animation) {
       bars = widget.bars;
-      WidgetsBinding.instance.addPostFrameCallback((x) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         Timer.periodic(widget.animateDurations, (timer) {
-          int mo = countBeat % widget.bars.length;
-          bars = List.from(widget.bars.getRange(0, mo + 1));
+          int mo = countBeat;
+          if (widget.bars.length != 0) {
+            int mo = countBeat % widget.bars.length;
+          }
+          if ((mo + 1) < widget.bars.length) {
+            bars = List.from(widget.bars.getRange(0, mo + 1));
+          }
           if (mounted) setState(() {});
           countBeat++;
           if (widget.animationLoop > 0 && widget.animationLoop <= (countBeat / widget.bars.length)) {
