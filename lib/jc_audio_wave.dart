@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class AudioWaveBar {
   AudioWaveBar({
     this.voiceTone,
-    this.color,
+    this.color = Colors.white,
     this.radius = 50.0,
   });
 
