@@ -1,3 +1,5 @@
+library jc_audio_wave;
+
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +77,7 @@ class _AudioWaveState extends State<AudioWave> {
         Timer.periodic(widget.animateDurations, (timer) {
           int mo = countBeat;
           if (widget.bars.length != 0) {
-            int mo = countBeat % widget.bars.length;
+            mo = countBeat % widget.bars.length;
           }
           if ((mo + 1) < widget.bars.length) {
             bars = List.from(widget.bars.getRange(0, mo + 1));
