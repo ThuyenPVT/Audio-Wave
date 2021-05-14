@@ -30,7 +30,7 @@ class AudioWave extends StatefulWidget {
     this.spacing = 5,
     this.crossAxisAlignment = WrapCrossAlignment.center,
     this.animation = true,
-    this.animationLoop = 1,
+    this.animationLoop = 0,
     this.animateDurations = const Duration(milliseconds: 100),
     @required this.bars,
   });
